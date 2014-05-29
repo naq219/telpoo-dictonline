@@ -71,8 +71,8 @@
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
-            android:paddingLeft="10dp"
             android:paddingBottom="7dp"
+            android:paddingLeft="10dp"
             android:paddingTop="4dp"
             android:src="@drawable/google" />
 
@@ -85,8 +85,34 @@
             android:paddingBottom="7dp"
             android:paddingTop="5dp"
             android:src="@drawable/iconmini" />
-        
     </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/btngoole"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:text="Google" />
+
+        <Button
+            android:id="@+id/btnsoha"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:text="SoHa" />
+
+        <Button
+            android:id="@+id/btnvdic"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:text="Vdic" />
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
