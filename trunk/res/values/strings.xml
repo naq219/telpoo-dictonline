@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Dictionary</string>
+    <string name="action_settings">Settings</string>
+    <string name="txttitle">Search</string>
+    <string name="spinner_title">Choose a dictionary</string>
+    <string name="languages">English - Vietnamese</string>
+    <string name="txthint">Input Word</string>
+    <string name="icondown">Down</string>
+
+    <string-array name="country_arrays">
+        <item>Tự động dịch</item>
+        <item>SoHa</item>
+        <item>Google Translate</item>
+        <item>Vdic</item>
+    </string-array>
+
+</resources>
