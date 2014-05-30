@@ -50,7 +50,7 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
 		edt = (EditText) findViewById(R.id.edt_inp);
-		btn = (Button) findViewById(R.id.btn);
+		btn = (Button) findViewById(R.id.btn_search);
 		wvshow = (WebView) findViewById(R.id.webview);
 		btngoogle = (Button) findViewById(R.id.btngoole);
 		btnsoha = (Button) findViewById(R.id.btnsoha);
@@ -123,6 +123,20 @@ public class MainActivity extends Activity {
 				new Vdictranslate().execute();
 			}
 		});
+		btn.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+//				URL = "http://tudien.xalo.vn/tra-tu/en-vi/";
+				URL = "http://tratu.coviet.vn/hoc-tieng-anh/tu-dien/lac-viet/A-V/";
+				data = edt.getText().toString();
+				URL1 = URL + data + ".html";
+//				URL1.getBytes().toString();
+				Log.v("URL", URL1);
+				new Coviettranslate().execute();
+			}
+		});
 
 	}
 
@@ -147,6 +161,50 @@ public class MainActivity extends Activity {
 			}
 		}
 		return targetURL;
+	}
+
+	private class Coviettranslate extends AsyncTask<Void, Void, Void> {
+		private String key;
+
+		@Override
+		protected void onPreExecute() {
+			// TODO Auto-generated method stub
+			super.onPreExecute();
+			mProgressDialog = new ProgressDialog(MainActivity.this);
+			mProgressDialog.setTitle("CoViet Translate");
+			mProgressDialog.setMessage("Loading...");
+			mProgressDialog.setIndeterminate(false);
+			mProgressDialog.show();
+		}
+
+		@Override
+		protected Void doInBackground(Void... params) {
+			// TODO Auto-generated method stub
+			try {
+				Document document = Jsoup.connect(URL1).get();
+				// Elements description =
+				// document.select("div[class=lookup-content-mean-body margin-top-10]");
+				Elements description = document.select("DIV[id=ctl00_ContentPlaceHolderMain_ctl00]");
+				description.select("div[class=p3l fl m3t]").remove();
+//				description.select("div[class=p5l fl]").remove();
+				description.select("div[id=partofspeech_100]").remove();
+				Log.v("Data3", description.toString());
+				key = description.toString();
+
+			} catch (Exception e) {
+				e.printStackTrace();
+
+			}
+			return null;
+		}
+
+		@Override
+		protected void onPostExecute(Void result) {
+			// TODO Auto-generated method stub
+			wvshow.loadDataWithBaseURL(null, key, "text/html", "UTF-8", null);
+			mProgressDialog.dismiss();
+		}
+
 	}
 
 	private class Googletranslate extends AsyncTask<Void, Void, Void> {
