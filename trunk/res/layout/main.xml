@@ -37,88 +37,58 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:background="#fff8dc" >
 
         <EditText
             android:id="@+id/edt_inp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/icon_down"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentTop="true"
-            android:background="#E6E6FA"
+            android:layout_height="fill_parent"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/btn_search"
+            android:layout_toRightOf="@+id/icon_down"
             android:ems="10"
-            android:hint="@string/txthint"
-            android:paddingLeft="60dp"
-            android:paddingRight="70dp" >
+            android:hint="@string/txthint" >
 
             <requestFocus />
         </EditText>
 
-        <Button
+        <ImageView
             android:id="@+id/btn_search"
             style="@style/button_text"
             android:layout_alignParentRight="true"
-            android:layout_alignParentTop="true"
-            android:background="@drawable/button"
+            android:src="@android:drawable/ic_menu_search"
+            android:layout_centerVertical="true"
             android:text="@string/txttitle" />
 
         <ImageView
             android:id="@+id/icon_google"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:paddingBottom="7dp"
-            android:paddingLeft="10dp"
-            android:paddingTop="4dp"
+            android:layout_centerVertical="true"
+            android:paddingLeft="4dp"
             android:src="@drawable/google" />
 
         <ImageView
             android:id="@+id/icon_down"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/icon_google"
+            android:layout_centerVertical="true"
             android:layout_toRightOf="@+id/icon_google"
-            android:paddingBottom="7dp"
-            android:paddingTop="5dp"
             android:src="@drawable/iconmini" />
     </RelativeLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal" >
-
-        <Button
-            android:id="@+id/btngoole"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="2"
-            android:text="Google" />
-
-        <Button
-            android:id="@+id/btnsoha"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="2"
-            android:text="SoHa" />
-
-        <Button
-            android:id="@+id/btnvdic"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="2"
-            android:text="Vdic" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#8B4513"
-        android:orientation="horizontal" >
+        android:orientation="vertical" >
+
+        <ProgressBar
+            android:id="@+id/progress"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center_horizontal"
+            android:visibility="gone" />
 
         <WebView
             android:id="@+id/webview"
