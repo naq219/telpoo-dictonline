@@ -1,24 +1,10 @@
 package gokuchan.dicev;
 
-import java.io.IOException;
-
-import org.apache.http.HttpEntity;
-import org.apache.http.HttpResponse;
-import org.apache.http.client.ClientProtocolException;
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.client.methods.HttpUriRequest;
-import org.apache.http.impl.client.DefaultHttpClient;
-import org.apache.http.util.EntityUtils;
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
-import org.jsoup.select.Elements;
+import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
-import android.os.AsyncTask;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.webkit.WebView;
@@ -27,8 +13,6 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-
-import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
 
 public class MainActivity extends Activity {
 	protected EditText edt;

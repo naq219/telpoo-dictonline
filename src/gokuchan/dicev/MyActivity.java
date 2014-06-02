@@ -7,7 +7,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 
 public class MyActivity extends MainActivity{
-	int type=Translate.TYPE_GOOGLE;
+	int type=Translate.TYPE_AUTO;
 	String key;
 	int keyLanguage=LanguageSupport.ENGLISH_VIETNAM;
 	
