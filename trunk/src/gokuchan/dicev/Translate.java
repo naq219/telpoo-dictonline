@@ -54,10 +54,27 @@ public class Translate {
 	 */
 	public static String auto(String key, int keyLanguage) {
 		Random random = new Random();
-		translate(random.nextInt(0 - 4), key, keyLanguage);
-		if(translate(type, key, keyLanguage))
+		int r;
+		String run;
+		switch (r = random.nextInt(1 - 4)) {
+		case 1:
+			run = soha(key, keyLanguage);
+			break;
+		case 2:
+			run = vdict(key, keyLanguage);
+			break;
+		case 3:
+			run = coviet(key, keyLanguage);
+			break;
+		case 4:
+			run = google(key, keyLanguage);
+			break;
+		default:
+			break;
+
+		}
 		return null;
-		// viet tiep di
+
 	}
 
 	public static String google(String key, int keyLanguage) {
