@@ -39,7 +39,10 @@ public class MainActivity extends Activity {
 		tvtitle = (TextView) findViewById(R.id.tvtitle);
 		img_left = (ImageView) findViewById(R.id.imgMenuLeft);
 		img_right = (ImageView) findViewById(R.id.img_share);
-		progress= (ProgressBar) findViewById(R.id.progress);
+		progress = (ProgressBar) findViewById(R.id.progress);
+		
+		
+		
 		// wvshow.setMovementMethod(new ScrollingMovementMethod());
 
 		final SlidingMenu menu = new SlidingMenu(getBaseContext());
@@ -50,7 +53,7 @@ public class MainActivity extends Activity {
 		menu.setBehindOffsetRes(R.dimen.slidingmenu_offset);
 		menu.setFadeDegree(0.35f);
 		menu.attachToActivity(this, SlidingMenu.SLIDING_CONTENT);
-		menu.setMenu(R.layout.slidingmenumain);
+		menu.setMenu(R.layout.menuleft);
 		menu.toggle(true);
 		img_left.setOnClickListener(new OnClickListener() {
 
