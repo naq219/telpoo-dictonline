@@ -1,11 +1,12 @@
 package gokuchan.dicev;
 
-import java.util.Random;
-
 import gokuchan.dicev.utils.LanguageSupport;
+
+import java.io.IOException;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 import android.util.Log;
@@ -50,30 +51,37 @@ public class Translate {
 	}
 
 	/*
-	 * chua code
+	 * dang code
 	 */
 	public static String auto(String key, int keyLanguage) {
-		Random random = new Random();
-		int r;
-		String run;
-		switch (r = random.nextInt(1 - 4)) {
-		case 1:
-			run = soha(key, keyLanguage);
-			break;
-		case 2:
-			run = vdict(key, keyLanguage);
-			break;
-		case 3:
-			run = coviet(key, keyLanguage);
-			break;
-		case 4:
-			run = google(key, keyLanguage);
-			break;
-		default:
-			break;
+		Document document = null;
+		String run = vdict(key, keyLanguage);
+		String check = getUrlVdict(key, keyLanguage);
 
+		try {
+			document = Jsoup.connect(check).get();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
-		return null;
+		String des = document.select("body").text();
+		Log.i("Check data null", " " + des);
+		if (des.toString().equals("Không tìm thấy") == false) {
+			// check = soha(key, keyLanguage);
+			Log.i("Đoạn này vẫn chạy", " ailfjdlkfjdlfk");
+			return run;
+		} else {
+			run = soha(key, keyLanguage);
+			check = getUrlSoHa(key, keyLanguage);
+			String shcheck = document.select("div[class=noarticletext]").text();
+			Log.i("Check data null", " " + shcheck);
+			if (shcheck.toString().equals("(Trang này hiện chưa có gì)") == false) {
+				return run;
+			}
+		}
+		run = coviet(key, keyLanguage);
+		check = getUrlCoViet(key, keyLanguage);
+		return run;
 
 	}
 
@@ -136,11 +144,12 @@ public class Translate {
 	}
 
 	/*
-	 * chua code
+	 * Vdict
 	 */
 	private static String getUrlVdict(String key, int keyLanguage) {
 		// http://m.vdict.com/fsearch.php?dictionaries=eng2viet&word=
-		String baseUrl = "http://m.vdict.com/fsearch.php?dictionaries=" + key;
+		String baseUrl = "http://m.vdict.com/fsearch.php?dictionaries=eng2viet&word="
+				+ key;
 		Log.v("URL link", "" + baseUrl.toString());
 		switch (keyLanguage) {
 		case LanguageSupport.ENGLISH_VIETNAM:
@@ -232,7 +241,7 @@ public class Translate {
 	 * So Ha
 	 */
 	private static String getUrlSoHa(String key, int keyLanguage) {
-		String baseURL = "http://tratu.soha.vn/dict/" + "/" + key;
+		String baseURL = "http://tratu.soha.vn/dict/" + key;
 		Log.v("URL link", "" + baseURL.toString());
 		switch (keyLanguage) {
 		case LanguageSupport.ENGLISH_VIETNAM:

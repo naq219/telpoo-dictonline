@@ -8,6 +8,15 @@
     <string name="languages">English - Vietnamese</string>
     <string name="txthint">Input Word</string>
     <string name="icondown">Down</string>
+    
+    <string name="txtNdich">Chọn nguồn dịch</string>
+    <string name="txtNgdich">Ngôn ngữ dịch</string>
+    <string name="txtLanguage">Ngôn ngữ</string>
+    <string name="txtShare">Chia sẻ ứng dụng</string>
+    <string name="txtRate">Đánh giá</string>
+    <string name="txtAppmore">Các ứng dụng khác</string>
+    <string name="txtGioithieu">Giới thiệu</string>
+    <string name="txtExit">Thoát</string>
 
     <string-array name="country_arrays">
         <item>Tự động dịch</item>
