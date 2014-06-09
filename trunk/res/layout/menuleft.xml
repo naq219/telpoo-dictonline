@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#111111"
+    android:orientation="vertical" >
+
+    <TextView
+        style="@style/tv_style"
+        android:layout_width="match_parent"
+        android:background="#111111" />
+    <TextView style="@style/tv_rule" />
+
+    <TextView
+        android:id="@+id/tvNDich"
+        style="@style/tv_style"
+        android:text="@string/txtNdich" />
+
+    <TextView style="@style/tv_rule" />
+
+    <TextView
+        android:id="@+id/tvNgdich"
+        style="@style/tv_style"
+        android:text="@string/txtNgdich" />
+
+    <TextView style="@style/tv_rule" />
+
+    <TextView
+        android:id="@+id/tvLanguage"
+        style="@style/tv_style"
+        android:text="@string/txtLanguage" />
+
+    <TextView style="@style/tv_rule" />
+
+    <TextView
+        android:id="@+id/tvShare"
+        style="@style/tv_style"
+        android:text="@string/txtShare" />
+
+    <TextView style="@style/tv_rule" />
+
+    <TextView
+        android:id="@+id/tvRate"
+        style="@style/tv_style"
+        android:text="@string/txtRate" />
+
+    <TextView style="@style/tv_rule" />
+
+    <TextView
+        android:id="@+id/tvAppmore"
+        style="@style/tv_style"
+        android:text="@string/txtAppmore" />
+
+    <TextView style="@style/tv_rule" />
+
+    <TextView
+        android:id="@+id/tvGioithieu"
+        style="@style/tv_style"
+        android:text="@string/txtGioithieu" />
+
+    <TextView style="@style/tv_rule" />
+
+    <TextView
+        android:id="@+id/tvExit"
+        style="@style/tv_style"
+        android:text="@string/txtExit" />
+
+    <TextView style="@style/tv_rule" />
+
+</LinearLayout>
